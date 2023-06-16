@@ -4718,7 +4718,7 @@ static bool InitGraphicsDevice(int width, int height)
     dispmanDisplay = vc_dispmanx_display_open(0);   // LCD
     dispmanUpdate = vc_dispmanx_update_start(0);
 
-    dispmanElement = vc_dispmanx_element_add(dispmanUpdate, dispmanDisplay, 0/*layer*/, &dstRect, 0/*src*/,
+    dispmanElement = vc_dispmanx_element_add(dispmanUpdate, dispmanDisplay, 100/*layer*/, &dstRect, 0/*src*/,
                                             &srcRect, DISPMANX_PROTECTION_NONE, &alpha, 0/*clamp*/, DISPMANX_NO_ROTATE);
 
     CORE.Window.handle.element = dispmanElement;
@@ -4794,6 +4794,9 @@ static bool InitGraphicsDevice(int width, int height)
 #endif
 
     if ((CORE.Window.flags & FLAG_WINDOW_MINIMIZED) > 0) MinimizeWindow();
+
+    glfwSwapInterval(0);        // No V-Sync by default
+
 
     return true;
 }
