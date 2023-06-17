@@ -4688,8 +4688,8 @@ static bool InitGraphicsDevice(int width, int height)
     // Take care that renderWidth/renderHeight fit on displayWidth/displayHeight aspect ratio
 
     VC_DISPMANX_ALPHA_T alpha = { 0 };
-    alpha.flags = DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS;
-    //alpha.flags = DISPMANX_FLAGS_ALPHA_FROM_SOURCE;       // TODO: Allow transparent framebuffer! -> FLAG_WINDOW_TRANSPARENT
+    //alpha.flags = DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS;
+    alpha.flags = DISPMANX_FLAGS_ALPHA_FROM_SOURCE;       // TODO: Allow transparent framebuffer! -> FLAG_WINDOW_TRANSPARENT
     alpha.opacity = 255;    // Set transparency level for framebuffer, requires EGLAttrib: EGL_TRANSPARENT_TYPE
     alpha.mask = 0;
 
