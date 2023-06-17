@@ -72,6 +72,7 @@
 //#define SUPPORT_CUSTOM_FRAME_CONTROL    1
 
 #define RPI_DISPMANX_LAYER 9
+#define DISABLE_VSYNC 
 
 // rcore: Configuration values
 //------------------------------------------------------------------------------------

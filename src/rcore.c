@@ -4773,6 +4773,14 @@ static bool InitGraphicsDevice(int width, int height)
 
     if ((CORE.Window.flags & FLAG_WINDOW_MINIMIZED) > 0) MinimizeWindow();
 
+#if (defined DISABLE_VSYNC)
+#if (defined PLATFORM_RPI)
+    eglSwapInterval(CORE.Window.device, 0); // No V-Sync by default
+#else
+    glfwSwapInterval(0); // No V-Sync by default
+#endif
+#endif
+
     return true;
 }
 
