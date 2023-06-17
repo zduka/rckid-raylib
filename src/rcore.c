@@ -4696,7 +4696,7 @@ static bool InitGraphicsDevice(int width, int height)
     dispmanDisplay = vc_dispmanx_display_open(0);   // LCD
     dispmanUpdate = vc_dispmanx_update_start(0);
 
-    dispmanElement = vc_dispmanx_element_add(dispmanUpdate, dispmanDisplay, 0/*layer*/, &dstRect, 0/*src*/,
+    dispmanElement = vc_dispmanx_element_add(dispmanUpdate, dispmanDisplay, RPI_DISPMANX_LAYER/*layer*/, &dstRect, 0/*src*/,
                                             &srcRect, DISPMANX_PROTECTION_NONE, &alpha, 0/*clamp*/, DISPMANX_NO_ROTATE);
 
     CORE.Window.handle.element = dispmanElement;

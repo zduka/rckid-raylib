@@ -71,6 +71,8 @@
 // Enabling this flag allows manual control of the frame processes, use at your own risk
 //#define SUPPORT_CUSTOM_FRAME_CONTROL    1
 
+#define RPI_DISPMANX_LAYER 9
+
 // rcore: Configuration values
 //------------------------------------------------------------------------------------
 #define MAX_FILEPATH_CAPACITY        8192       // Maximum file paths capacity
